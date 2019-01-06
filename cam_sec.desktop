@@ -6,5 +6,5 @@ Icon=/home/abhijit/atom_projects/cam_sec.jpg
 
 Exec=python3 /home/abhijit/atom_projects/launch_window.py
 #Exec=python3 /home/abhijit/atom_projects/registration_box.py
-Terminal=true
+Terminal=false
 Type=Application
