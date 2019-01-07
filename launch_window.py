@@ -2,7 +2,7 @@ import tkinter as tk
 from subprocess import call
 def start():
     """Enable scanning by setting the global flag to True."""
-    textfile=open("home/cam_security_setup/destination.txt","r")
+    textfile=open("~/home/cam_security_setup/destination.txt","r")
     folder=textfile.read()
     textfile.close()
     location="python3 "+folder+"/app_launcher.py"
