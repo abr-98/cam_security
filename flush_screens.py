@@ -1,6 +1,6 @@
 import os,datetime
 def delete():
-    textfile=open("home/cam_security_setup/destination.txt","r")
+    textfile=open("~/home/cam_security_setup/destination.txt","r")
     folder=textfile.read()
     textfile.close()
     location=folder+"/time.txt"
