@@ -1,7 +1,7 @@
 import numpy as np
 import cv2,sys
 from matplotlib import pyplot as plt
-textfile=open("home/cam_security_setup/destination.txt","r")
+textfile=open("~/home/cam_security_setup/destination.txt","r")
 folder=textfile.read()
 textfile.close()
 location1=folder+"/haarcascade_frontalface_default.xml"
