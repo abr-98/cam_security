@@ -10,7 +10,7 @@ from PIL import ImageDraw
 from face_detect_sec import read_image
 now_date=datetime.datetime.now().date().strftime ("%d-%m-%y")
 now_date_str=str(now_date)
-textfile=open("home/cam_security_setup/destination.txt","r")
+textfile=open("~/home/cam_security_setup/destination.txt","r")
 folder=textfile.read()
 textfile.close()
 
