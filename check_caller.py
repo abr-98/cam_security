@@ -3,7 +3,7 @@ from PIL import Image
 from flush_memo import delete
 import os,cv2,datetime
 def caller ():
-  textfile=open("home/cam_security_setup/destination.txt","r")
+  textfile=open("~/home/cam_security_setup/destination.txt","r")
   folder=textfile.read()
   textfile.close()
   location=folder+"/time.txt"
