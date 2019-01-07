@@ -5,7 +5,7 @@ from tkinter import messagebox
 import os,subprocess
 import sys
 def display_screen():
-    textfile=open("home/cam_security_setup/destination.txt","r")
+    textfile=open("~/home/cam_security_setup/destination.txt","r")
     folder=textfile.read()
     textfile.close()
     location=folder+"/time.txt"
