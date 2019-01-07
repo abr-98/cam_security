@@ -7,7 +7,7 @@ import re
 root =tk.Tk()
 root.geometry('500x500')
 root.title("Registration Form")
-textfile=open("home/cam_security_setup/destination.txt","r")
+textfile=open("~/home/cam_security_setup/destination.txt","r")
 folder=textfile.read()
 textfile.close()
 Fullname=tk.StringVar()
@@ -59,7 +59,8 @@ def database():
                "Please try again and enter a new email."
            )
        root.destroy()
-       exec_code=call("python3 /home/abhijit/atom_projects/registration_box.py",shell=True)
+       exec_code=call(location,shell=True)
+
    if isvalidemail(email):
        messagebox.showerror(
                "Invalid Mail.",
@@ -73,7 +74,7 @@ def database():
    mycursor.execute('INSERT INTO user_data (full_name,email) VALUES("%s","%s")'%(name1,email))
    conn.commit()
    root.destroy()
-   exec_code=call("python3 /home/cam_security_setup/launch_window.py",shell=True)
+   exec_code=call("python3 ~/home/cam_security_setup/launch_window.py",shell=True)
 
 label_0 = tk.Label(root, text="Registration form",width=20,font=("bold", 20))
 label_0.place(x=90,y=53)
