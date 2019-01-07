@@ -3,7 +3,7 @@ import datetime
 import os,subprocess
 from tkinter import messagebox
 def display():
-    textfile=open("home/cam_security_setup/destination.txt","r")
+    textfile=open("~/home/cam_security_setup/destination.txt","r")
     folder=textfile.read()
     textfile.close()
     location=folder+"/time.txt"
