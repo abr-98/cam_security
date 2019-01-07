@@ -8,6 +8,9 @@ timer=tk.StringVar()
 mytime=0
 s=0
 c=0
+textfile=open("home/cam_security_setup/destination.txt","r")
+folder=textfile.read()
+textfile.close()
 def get_value():
     try:
         mytime=int(timer.get())
@@ -30,7 +33,8 @@ def exec_cam_capture():
     if running:
         t2= int(round(time.time()))
         if t2-t1==mytime:
-           exit_code = call("python3 /home/abhijit/atom_projects/test_capture.py", shell=True)
+           location="python3 "+folder+"/test_capture.py"
+           exit_code = call(location, shell=True)
     root.after(3000,exec_cam_capture)
 
 
@@ -40,7 +44,8 @@ def stop():
     global running
     running = False
     root.destroy()
-    exit_code=call("python3 /home/abhijit/atom_projects/main_control.py",shell=True)
+    location="python3 "+folder+"/main_control.py"
+    exit_code=call(location,shell=True)
     #exec_cam_capture()
 
 def start():

@@ -9,14 +9,20 @@ from judge_diff import compare_images
 import os,cv2,sys
 
 def take_screen():
-    textfile=open("/home/abhijit/atom_projects/time.txt","r")
+
+    textfile=open("home/cam_security_setup/destination.txt","r")
+    folder=textfile.read()
+    textfile.close()
+    location=folder+"/time.txt"
+    textfile=open(location,"r")
     now_time_str=textfile.read()
 
     textfile.close()
     now_date=datetime.datetime.now().date().strftime ("%d-%m-%y")
     now_date_str=str(now_date)
-    name_screen="/home/abhijit/atom_projects/screen-"+now_date_str+"-"+now_time_str
-    textfile=open("/home/abhijit/atom_projects/count_screen.txt","r")
+    name_screen=folder+"/screen-"+now_date_str+"-"+now_time_str
+    location=folder+"/count_screen.txt"
+    textfile=open(location,"r")
     img_ctr_2=textfile.read()
     textfile.close()
     img_counter=int(img_ctr_2)
@@ -41,7 +47,8 @@ def take_screen():
     if img_counter==0:
        img_counter=img_counter+1
        #print(img_counter)
-       textfile=open("/home/abhijit/atom_projects/count_screen.txt","w")
+       location=folder+"/count_screen.txt"
+       textfile=open(location,"w")
        textfile.write("%s" % img_counter)
        textfile.close()
     elif img_counter>0:
@@ -55,7 +62,8 @@ def take_screen():
       if p==-1:
         img_counter=img_counter+1
         #print(img_counter)
-        textfile=open("/home/abhijit/atom_projects/count_screen.txt","w")
+        location=folder+"/count_screen.txt"
+        textfile=open(location,"w")
         textfile.write("%s" % img_counter)
         textfile.close()
       else:

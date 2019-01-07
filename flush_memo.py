@@ -1,15 +1,20 @@
 import os,datetime
 def delete():
-    textfile=open("/home/abhijit/atom_projects/time.txt","r")
+    textfile=open("home/cam_security_setup/destination.txt","r")
+    folder=textfile.read()
+    textfile.close()
+    location=folder+"/time.txt"
+    textfile=open(location,"r")
     now_time_str=textfile.read()
 
     textfile.close()
     now_date=datetime.datetime.now().date().strftime ("%d-%m-%y")
     now_date_str=str(now_date)
-    textfile=open("/home/abhijit/atom_projects/count_scr.txt","r")
+    location=folder+"/count_scr.txt"
+    textfile=open(location,"r")
     limit=textfile.read()
     i=0
-    name_frame="/home/abhijit/atom_projects/frame-"+now_date_str+"-"+now_time_str
+    name_frame=folder+"/frame-"+now_date_str+"-"+now_time_str
     t=int(limit)
     if t==0:
       while i<=t:

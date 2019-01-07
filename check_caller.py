@@ -3,24 +3,29 @@ from PIL import Image
 from flush_memo import delete
 import os,cv2,datetime
 def caller ():
-  textfile=open("/home/abhijit/atom_projects/time.txt","r")
+  textfile=open("home/cam_security_setup/destination.txt","r")
+  folder=textfile.read()
+  textfile.close()
+  location=folder+"/time.txt"
+  textfile=open(location,"r")
   now_time_str=textfile.read()
 
   textfile.close()
-  textfile=open("/home/abhijit/atom_projects/count.txt","r")
+  location=folder+"/count.txt"
+  textfile=open(location,"r")
   count2=textfile.read()
   now_date=datetime.datetime.now().date().strftime ("%d-%m-%y")
   now_date_str=str(now_date)
   textfile.close()
-  name_frame="/home/abhijit/atom_projects/frame-"+now_date_str+"-"+now_time_str
+  name_frame=folder+"/frame-"+now_date_str+"-"+now_time_str
   count=int(count2)
   count3=0
   count_scr=0
   count1=str(count3)
   img1_s=name_frame+"/frame"+count1+".jpg"
   img_s=img1_s
-
-  textfile=open("/home/abhijit/atom_projects/count_scr.txt","w")
+  location=folder+"/count_scr.txt"
+  textfile=open(location,"w")
   textfile.write("%s" %count_scr)
   textfile.close()
   #print(img_s)
@@ -53,7 +58,8 @@ def caller ():
       os.rename(img2_s,img_f_s)
       os.rename(img2_s_f,img_f_s_f)
       img_s=img_f_s
-      textfile=open("/home/abhijit/atom_projects/count_scr.txt","w")
+      location=folder+"/count_scr.txt"
+      textfile=open(location,"w")
       textfile.write("%s" %count_scr)
       textfile.close()
     if r==1:

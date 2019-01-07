@@ -1,13 +1,17 @@
 import tkinter as tk
 from subprocess import call
-
+textfile=open("home/cam_security_setup/destination.txt","r")
+folder=textfile.read()
+textfile.close()
 
 def exec_display_frames():
-    exit_code = call("python3 /home/abhijit/atom_projects/caller.py", shell=True)
+    location="python3 "+folder+"/caller.py"
+    exit_code = call(location, shell=True)
     display_frames.config(state="disabled")
 
 def exec_display_screen():
-    exit_code = call("python3 /home/abhijit/atom_projects/caller_screens.py", shell=True)
+    location="python3 "+folder+"/caller_screens.py.py"
+    exit_code = call(location, shell=True)
     display_screens.config(state="disabled")
 
 root = tk.Tk()

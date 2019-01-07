@@ -10,7 +10,9 @@ from PIL import ImageDraw
 from face_detect_sec import read_image
 now_date=datetime.datetime.now().date().strftime ("%d-%m-%y")
 now_date_str=str(now_date)
-
+textfile=open("home/cam_security_setup/destination.txt","r")
+folder=textfile.read()
+textfile.close()
 
 video=cv2.VideoCapture(0)
 
@@ -27,15 +29,17 @@ while True:
       textfile.close()#SPACE
       img_counter=int(img_ctr)
       #img_ctr=str(img_counter)
-      textfile=open("/home/abhijit/atom_projects/time.txt","r")
+      location=folder+"/time.txt"
+      textfile=open(location,"r")
       now_time_str=textfile.read()
-      name_frame="/home/abhijit/atom_projects/frame-"+now_date_str+"-"+now_time_str
+      name_frame=folder+"/frame-"+now_date_str+"-"+now_time_str
       textfile.close()
       img_name=name_frame+"/frame"+img_ctr+".jpg"
       img_name_f=name_frame+"/frame"+img_ctr+"_f.jpg"
       text=now_date_str+"-"+now_time_str
       #sec=sec2
-      textfile=open("/home/abhijit/atom_projects/count.txt","w")
+      location=folder+"/count.txt"
+      textfile=open(location,"w")
       textfile.write(img_ctr)
       textfile.close()
       cv2.imwrite(img_name,frame)
@@ -54,7 +58,7 @@ while True:
         #print("written".format(img_name))
       img_counter+=1
       img_ctr_2=str(img_counter)
-      textfile=open("/home/abhijit/atom_projects/count.txt","w")
+      textfile=open(location,"w")
       textfile.write(img_ctr_2)
       textfile.close()
       break
