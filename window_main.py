@@ -8,7 +8,7 @@ timer=tk.StringVar()
 mytime=0
 s=0
 c=0
-textfile=open("home/cam_security_setup/destination.txt","r")
+textfile=open("~/home/cam_security_setup/destination.txt","r")
 folder=textfile.read()
 textfile.close()
 def get_value():
